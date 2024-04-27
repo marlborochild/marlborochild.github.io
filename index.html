@@ -1,0 +1,73 @@
+<!--
+    Simple static Telegram WebApp. Does not verify the WebAppInitData, as a bot token would be needed for that.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>python-telegram-bot Example WebApp</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            background-color: #1e1e1e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-y: scroll;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Crée 2 colonnes égales */
+            gap: 1vh; /* Ajoute un espacement entre les boîtes */
+            width: 25vw; /* Ajuste cette valeur pour contrôler la largeur globale */
+            margin: 0 auto; /* Centre le conteneur horizontalement */
+        }
+        .box {
+            width: 10vw; /* Ajuste cette valeur pour contrôler la largeur de la boîte */
+            height: 10vw; /* Transforme la boîte en carré */
+            background-color: rgb(13, 138, 255);
+            margin: auto; /* Centre la boîte verticalement */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+
+<script type="text/javascript">
+    // const colorPicker = new iro.ColorPicker('#picker', {
+    //     borderColor: "#ffffff",
+    //     borderWidth: 1,
+    //     width: Math.round(document.documentElement.clientWidth / 2),
+    // });
+    // colorPicker.on('color:change', function (color) {
+    //     document.body.style.background = color.hexString;
+    // });
+
+    
+    Telegram.WebApp.ready();
+    Telegram.WebApp.MainButton.setText('Choose Color').show().onClick(function () {
+        // const data = JSON.stringify({hex: colorPicker.color.hexString, rgb: colorPicker.color.rgb});
+        Telegram.WebApp.sendData("test");
+        Telegram.WebApp.close();
+    });
+</script>
+<body>
+    <div class="container">
+        <!-- Repeat the box divs for a total of 10 boxes -->
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+<script type="text/javascript">
+    Telegram.WebApp.expand();
+</script>
+</html>
