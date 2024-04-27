@@ -7,67 +7,62 @@
     <meta charset="UTF-8">
     <title>python-telegram-bot Example WebApp</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface avec Boutons</title>
     <style>
+        /* Réinitialisation des styles par défaut */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Styles pour l'ensemble de la page */
         body {
-            background-color: #1e1e1e;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow-y: scroll;
+            background-color: #f0f0f0;
         }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Crée 2 colonnes égales */
-            gap: 1vh; /* Ajoute un espacement entre les boîtes */
-            width: 25vw; /* Ajuste cette valeur pour contrôler la largeur globale */
-            margin: 0 auto; /* Centre le conteneur horizontalement */
+
+        /* Styles pour les boutons */
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        .box {
-            width: 10vw; /* Ajuste cette valeur pour contrôler la largeur de la boîte */
-            height: 10vw; /* Transforme la boîte en carré */
-            background-color: rgb(13, 138, 255);
-            margin: auto; /* Centre la boîte verticalement */
-            border-radius: 10px;
+
+        .button {
+            width: 80%; /* Largeur du bouton */
+            max-width: 300px; /* Largeur maximale pour les téléphones */
+            margin-bottom: 20px; /* Espacement entre les boutons */
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            background-color: #3498db;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
-
-
-<script type="text/javascript">
-    // const colorPicker = new iro.ColorPicker('#picker', {
-    //     borderColor: "#ffffff",
-    //     borderWidth: 1,
-    //     width: Math.round(document.documentElement.clientWidth / 2),
-    // });
-    // colorPicker.on('color:change', function (color) {
-    //     document.body.style.background = color.hexString;
-    // });
-
-    
-    Telegram.WebApp.ready();
-    Telegram.WebApp.MainButton.setText('Choose Color').show().onClick(function () {
-        // const data = JSON.stringify({hex: colorPicker.color.hexString, rgb: colorPicker.color.rgb});
-        Telegram.WebApp.sendData("test");
-        Telegram.WebApp.close();
-    });
-</script>
 <body>
-    <div class="container">
-        <!-- Repeat the box divs for a total of 10 boxes -->
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+    <div class="button-container">
+        <button class="button">Bouton 1</button>
+        <button class="button">Bouton 2</button>
+        <button class="button">Bouton 3</button>
     </div>
 </body>
-<script type="text/javascript">
-    Telegram.WebApp.expand();
-</script>
 </html>
