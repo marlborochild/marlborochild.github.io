@@ -29,3 +29,33 @@ function sendCommand() {
     Telegram.WebApp.sendData(message);
     Telegram.WebApp.close();
 }
+
+function showBasket() {
+    updateBasketContents();
+    document.getElementById('basketModal').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+}
+
+function updateBasketContents() {
+    let basketDiv = document.getElementById('basketContents');
+    basketDiv.innerHTML = "";
+    for (let product in basket) {
+        let itemDiv = document.createElement('div');
+        itemDiv.textContent = `${product}: ${basket[product]}`;
+        let deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = function() { removeFromBasket(product); };
+        itemDiv.appendChild(deleteButton);
+        basketDiv.appendChild(itemDiv);
+    }
+}
+
+function removeFromBasket(productName) {
+    delete basket[productName];
+    updateBasketContents();
+}
+
+function closeBasket() {
+    document.getElementById('basketModal').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+}
