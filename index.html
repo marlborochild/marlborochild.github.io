@@ -56,6 +56,44 @@
         .button:hover {
             background-color: #2980b9;
         }
+
+         #basketModal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            z-index: 1002; /* Ensures it appears above other content but below overlays if needed */
+            display: none;
+            width: 80%;
+            max-width: 300px;
+        }
+        #basketContents {
+            margin-bottom: 20px;
+        }
+        #basketContents div {
+            background: #f2f2f2;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            position: relative;
+        }
+        #basketContents div button {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ff4d4d;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+            padding: 5px 10px;
+        }
     </style>
 </head>
 <body>
